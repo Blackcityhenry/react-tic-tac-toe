@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #555;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ttt{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100vh;
+  border: 5px solid #999;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.clickable{
+  width: 33vh;
+  height: 33vh;
+  background-color: #333;
+  border: 5px solid #999;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.clickable--clicked{
+  cursor: normal;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clickable__totem {
+  width: 70%;
+  height: 70%;
+}
+
+.clickable__totem--circle{
+  border-radius: 50%;
+  border: 20px solid #999;
+}
+
+.clickable__totem--cross{
+  position: relative;
+}
+
+.clickable__totem--cross:before, .clickable__totem--cross:after{
+  content: '';
+  position: absolute;
+  border-radius: 15px;
+  height: 100%;
+  width: 0;
+  border: 10px solid #999;
+}
+
+.clickable__totem--cross:before{
+  transform: rotate(45deg) translateX(-50%);
+  left: 50%;
+}
+
+
+.clickable__totem--cross:after{
+  transform: rotate(-45deg) translateX(50%);
+  right: 50%;
 }
