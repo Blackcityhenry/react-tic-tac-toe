@@ -5,7 +5,8 @@ function NineBlock(){
 
   const [turn, setTurn] = useState('A');
 
-  function switchTurn(){
+
+  const switchTurn = ()=>{
     if ( turn === 'A' ){
       setTurn('B');
     } else {
@@ -14,16 +15,16 @@ function NineBlock(){
   }
 
   return (
-    <div className="ttt">
-      <Clickable turn={turn} onClick={switchTurn}/>
-      <Clickable turn={turn} onClick={switchTurn}/>
-      <Clickable turn={turn} onClick={switchTurn}/>
-      <Clickable turn={turn} onClick={switchTurn}/>
-      <Clickable turn={turn} onClick={switchTurn}/>
-      <Clickable turn={turn} onClick={switchTurn}/>
-      <Clickable turn={turn} onClick={switchTurn}/>
-      <Clickable turn={turn} onClick={switchTurn}/>
-      <Clickable turn={turn} onClick={switchTurn}/>
+    <div className="ttt" onClick={()=>switchTurn()}>
+      <Clickable turn={turn}/>
+      <Clickable turn={turn}/>
+      <Clickable turn={turn}/>
+      <Clickable turn={turn}/>
+      <Clickable turn={turn}/>
+      <Clickable turn={turn}/>
+      <Clickable turn={turn}/>
+      <Clickable turn={turn}/>
+      <Clickable turn={turn}/>
     </div>
   )
 }

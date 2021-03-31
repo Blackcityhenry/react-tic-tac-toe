@@ -6,14 +6,22 @@ function Clickable(turn){
 
   const [clicked, setClicked] = useState(false);
 
+  const [occupy, setOccupy] = useState('');
+
   function clickEvent(){
 
-    setClicked(true);
+    if (clicked){
+
+    } else {
+
+      setClicked(true);
+      setOccupy(turn.turn);
+    }
   }
 
   return (
-    <div className={'clickable'} onClick={clickEvent}>
-      {clicked && (turn === 'A' ? <Cross/> : <Circle/>)}
+    <div className={clicked ? 'clickable--clicked clickable' : 'clickable'} onClick={clickEvent}>
+      {clicked && (occupy === 'A' ? <Cross/> : <Circle/>)}
     </div>
   )
 }

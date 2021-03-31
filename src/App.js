@@ -1,10 +1,12 @@
-import NineBlock from './component/NineBlock.js';
+import NineBlock from './component/NineBlock';
+import Meta from './component/Meta';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <NineBlock/>
+      <NineBlock />
+      <Meta />
     </div>
   );
 }

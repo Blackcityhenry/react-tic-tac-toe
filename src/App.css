@@ -26,7 +26,7 @@ body {
 }
 
 .clickable--clicked{
-  cursor: normal;
+  cursor: not-allowed;
 }
 
 .clickable__totem {
@@ -50,6 +50,7 @@ body {
   height: 100%;
   width: 0;
   border: 10px solid #999;
+  transform-origin: center center;
 }
 
 .clickable__totem--cross:before{
