@@ -2,7 +2,7 @@ import Cross from './Cross';
 import Circle from './Circle';
 import { useState } from 'react';
 
-function Clickable(turn){
+function Clickable({ turn, switchTurn, addScore }){
 
   const [clicked, setClicked] = useState(false);
 
@@ -10,17 +10,19 @@ function Clickable(turn){
 
   function clickEvent(){
 
+
     if (clicked){
 
     } else {
 
+      switchTurn();
       setClicked(true);
-      setOccupy(turn.turn);
+      setOccupy(turn);
     }
   }
 
   return (
-    <div className={clicked ? 'clickable--clicked clickable' : 'clickable'} onClick={clickEvent}>
+    <div className={clicked ? 'clickable--clicked clickable' : 'clickable'} onClick={()=>clickEvent()}>
       {clicked && (occupy === 'A' ? <Cross/> : <Circle/>)}
     </div>
   )
