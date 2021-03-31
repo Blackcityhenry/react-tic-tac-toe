@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## TODO
 1. Stop playing after winner is defined
+2. Draw condition
 
 ## Available Scripts
 
