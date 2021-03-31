@@ -6,6 +6,10 @@ body {
   background-color: #555;
 }
 
+.App{
+  display: flex;
+}
+
 .ttt{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -62,4 +66,12 @@ body {
 .clickable__totem--cross:after{
   transform: rotate(-45deg) translateX(50%);
   right: 50%;
+}
+
+.meta {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
