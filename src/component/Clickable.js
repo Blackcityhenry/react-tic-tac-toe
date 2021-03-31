@@ -2,7 +2,7 @@ import Cross from './Cross';
 import Circle from './Circle';
 import { useState } from 'react';
 
-function Clickable({ turn, switchTurn, addScore }){
+function Clickable({ prime, turn, switchTurn, addScore }){
 
   const [clicked, setClicked] = useState(false);
 
@@ -15,9 +15,10 @@ function Clickable({ turn, switchTurn, addScore }){
 
     } else {
 
-      switchTurn();
       setClicked(true);
       setOccupy(turn);
+      switchTurn();
+      addScore(prime, turn);
     }
   }
 
