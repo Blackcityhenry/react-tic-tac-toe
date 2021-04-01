@@ -1,10 +1,13 @@
-function Meta({winner, turn}){
+function Meta({winner, turn, isDraw}){
 
   return (
     <div className="meta">
-      {winner !== ''
-      ? <h1>{winner} is Winner</h1>
-      : <h2>{turn}'s Turn</h2>}
+      { isDraw
+        ? <h1>Draw</h1>
+        : winner === ''
+          ? <h2>{turn}'s Turn</h2>
+          : <h1>{winner} is Winner</h1>
+      }
     </div>
   )
 

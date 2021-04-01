@@ -11,6 +11,22 @@ function App() {
 
   var winner = '';
 
+  // var draw = 2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 + 23;
+
+  var draw = 100;
+  var isDraw = false;
+
+  const checkDraw = (prime)=>{
+
+    draw = draw - prime;
+    console.log(draw);
+
+    if ( draw === 0 && winner === ''){
+      console.log('draw: '+true);
+      isDraw = true;
+    }
+  }
+
   const switchTurn = ()=>{
     if ( turn === 'A' ){
       setTurn('B');
@@ -67,8 +83,8 @@ function App() {
 
   return (
     <div className="App">
-      <NineBlock turn={turn} switchTurn={switchTurn} addScore={addScore}/>
-      <Meta winner={winner} turn={turn} />
+      <NineBlock turn={turn} switchTurn={switchTurn} addScore={addScore} checkDraw={checkDraw}/>
+      <Meta winner={winner} turn={turn} isDraw={isDraw}/>
     </div>
   );
 }
